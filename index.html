@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tellado | Autoescuela Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/car-icon.svg">
+    <!-- Leaflet CSS para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <style>
+        /* Estilos temporales para depuración */
+        .debug {
+            border: 1px solid red !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Tellado<span class="logo-highlight">Auto</span></span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#sedes">Sedes</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#" class="btn btn-primary btn-small">Matricúlate</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Aprende a conducir con <span class="text-highlight">profesionales</span></h1>
+                <p class="hero-subtitle">Más de 20 años formando conductores responsables y seguros. Obtén tu carnet con la mayor tasa de aprobados de la ciudad.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicitar información</a>
+                    <a href="#cursos" class="btn btn-secondary">Ver cursos</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-car"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros <span class="text-highlight">Servicios</span></h2>
+            <p class="section-subtitle">Ofrecemos una formación completa y adaptada a tus necesidades</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Carnet B (Coche)</h3>
+                    <p>Curso completo para obtener el carnet de turismo. Incluye clases teóricas y prácticas.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Clases teóricas online/presencial</li>
+                        <li><i class="fas fa-check"></i> Simuladores de conducción</li>
+                        <li><i class="fas fa-check"></i> Prácticas con vehículos nuevos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3>Carnet A (Moto)</h3>
+                    <p>Formación específica para motociclistas. Todos los carnets disponibles.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Formación en circuito cerrado</li>
+                        <li><i class="fas fa-check"></i> Equipamiento de seguridad</li>
+                        <li><i class="fas fa-check"></i> Carnets A1, A2 y A</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Carnet C (Camión)</h3>
+                    <p>Cursos profesionales para transporte de mercancías. Incluye formación CAP.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Carnet C, C+E y C1</li>
+                        <li><i class="fas fa-check"></i> Formación CAP inicial y continua</li>
+                        <li><i class="fas fa-check"></i> Prácticas en vehículos reales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Cursos Destacados -->
+    <section class="courses" id="cursos">
+        <div class="container">
+            <h2 class="section-title">Cursos <span class="text-highlight">Destacados</span></h2>
+            <p class="section-subtitle">Elige el curso que mejor se adapte a tus objetivos</p>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-badge">Más Popular</div>
+                    <h3>Carnet B Intensivo</h3>
+                    <div class="course-price">Desde <span>650€</span></div>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Teoría online ilimitada</li>
+                        <li><i class="fas fa-check"></i> 15 clases prácticas</li>
+                        <li><i class="fas fa-check"></i> Simulador de examen</li>
+                        <li><i class="fas fa-check"></i> Tasas de tráfico incluidas</li>
+                        <li><i class="fas fa-check"></i> Gestión de citas</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Más información</a>
+                </div>
+                
+                <div class="course-card highlighted">
+                    <div class="course-badge">Oferta Especial</div>
+                    <h3>Carnet A + B Pack</h3>
+                    <div class="course-price">Desde <span>950€</span></div>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Carnet B completo</li>
+                        <li><i class="fas fa-check"></i> Carnet A2 completo</li>
+                        <li><i class="fas fa-check"></i> 10% de descuento</li>
+                        <li><i class="fas fa-check"></i> Gestión unificada</li>
+                        <li><i class="fas fa-check"></i> Matrícula gratuita</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-secondary">Aprovechar oferta</a>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-badge">Profesional</div>
+                    <h3>Carnet C + CAP</h3>
+                    <div class="course-price">Desde <span>1200€</span></div>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Carnet C completo</li>
+                        <li><i class="fas fa-check"></i> Formación CAP inicial</li>
+                        <li><i class="fas fa-check"></i> Prácticas en camión real</li>
+                        <li><i class="fas fa-check"></i> Asesoramiento laboral</li>
+                        <li><i class="fas fa-check"></i> Posibilidad de financiación</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Mapa y Sedes -->
+    <section class="map-section" id="sedes">
+        <div class="container">
+            <h2 class="section-title">Nuestras <span class="text-highlight">Sedes</span></h2>
+            <p class="section-subtitle">Encuentra la autoescuela más cercana a tu ubicación</p>
+            
+            <div class="map-container">
+                <div class="locations-sidebar">
+                    <h3><i class="fas fa-map-marker-alt"></i> Nuestras Autoescuelas</h3>
+                    <p>Haz clic en una sede para verla en el mapa</p>
+                    
+                    <div class="locations-list">
+                        <div class="location-item active" data-location="0">
+                            <div class="location-info">
+                                <h4><i class="fas fa-car"></i> AutoVial Centro</h4>
+                                <p><i class="fas fa-map-pin"></i> Calle Conducción Segura, 123</p>
+                                <p><i class="fas fa-phone"></i> +34 912 345 678</p>
+                                <p><i class="fas fa-clock"></i> L-V: 9:00-20:00, S: 9:00-14:00</p>
+                            </div>
+                            <button class="btn-location-select">Ver en mapa</button>
+                        </div>
+                        
+                        <div class="location-item" data-location="1">
+                            <div class="location-info">
+                                <h4><i class="fas fa-motorcycle"></i> AutoVial Norte</h4>
+                                <p><i class="fas fa-map-pin"></i> Avenida de la Seguridad, 45</p>
+                                <p><i class="fas fa-phone"></i> +34 913 456 789</p>
+                                <p><i class="fas fa-clock"></i> L-V: 8:30-19:30, S: 9:00-13:00</p>
+                            </div>
+                            <button class="btn-location-select">Ver en mapa</button>
+                        </div>
+                        
+                        <div class="location-item" data-location="2">
+                            <div class="location-info">
+                                <h4><i class="fas fa-truck"></i> AutoVial Sur</h4>
+                                <p><i class="fas fa-map-pin"></i> Plaza del Conductor, 78</p>
+                                <p><i class="fas fa-phone"></i> +34 914 567 890</p>
+                                <p><i class="fas fa-clock"></i> L-V: 9:00-20:00, S: 10:00-15:00</p>
+                            </div>
+                            <button class="btn-location-select">Ver en mapa</button>
+                        </div>
+                        
+                        <div class="location-item" data-location="3">
+                            <div class="location-info">
+                                <h4><i class="fas fa-school"></i> AutoVial Este</h4>
+                                <p><i class="fas fa-map-pin"></i> Calle del Aprendizaje, 22</p>
+                                <p><i class="fas fa-phone"></i> +34 915 678 901</p>
+                                <p><i class="fas fa-clock"></i> L-V: 8:00-19:00, S: Cerrado</p>
+                            </div>
+                            <button class="btn-location-select">Ver en mapa</button>
+                        </div>
+                    </div>
+                    
+                    <div class="map-legend">
+                        <h4><i class="fas fa-info-circle"></i> Leyenda</h4>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #e74c3c;"></span>
+                            <span>Sede principal</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #3498db;"></span>
+                            <span>Sede secundaria</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #2ecc71;"></span>
+                            <span>Centro de prácticas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <div id="autoescuelaMap"></div>
+                    <div class="map-controls">
+                        <button id="btn-locate-me" class="btn-map-control">
+                            <i class="fas fa-location-arrow"></i> Mi ubicación
+                        </button>
+                        <button id="btn-reset-view" class="btn-map-control">
+                            <i class="fas fa-sync-alt"></i> Vista general
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Opiniones de <span class="text-highlight">Nuestros Alumnos</span></h2>
+            <p class="section-subtitle">Miles de conductores confían en nuestra formación</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>María González</h4>
+                            <span>Carnet B aprobado en 2023</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Excelente autoescuela. Los instructores son muy pacientes y profesionales. Aprobé a la primera gracias a su método de enseñanza."</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Carlos Ruiz</h4>
+                            <span>Carnet A aprobado en 2024</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Me encantó la formación en moto. El circuito de prácticas es muy seguro y los instructores son expertos en conducción de motocicletas."</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Ana López</h4>
+                            <span>Carnet C aprobado en 2024</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Gracias a AutoVial conseguí mi carnet de camión y encontré trabajo rápidamente. La formación CAP fue fundamental para mi empleo."</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Contacta con <span class="text-highlight">Nosotros</span></h2>
+                    <p class="contact-description">¿Listo para empezar tu formación? Ponte en contacto con nosotros y te asesoraremos sin compromiso.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Calle Conducción Segura, 123<br>28001 Madrid</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+34 912 345 678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@autovial.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Horario</h4>
+                                <p>Lunes a Viernes: 9:00 - 20:00<br>Sábados: 9:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Teléfono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="course" required>
+                                <option value="" disabled selected>Selecciona un curso</option>
+                                <option value="carnet-b">Carnet B (Coche)</option>
+                                <option value="carnet-a">Carnet A (Moto)</option>
+                                <option value="carnet-c">Carnet C (Camión)</option>
+                                <option value="otros">Otros cursos</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fas fa-car"></i>
+                        <span>Auto<span class="logo-highlight">Vial</span></span>
+                    </a>
+                    <p>Autoescuela líder en formación de conductores desde 2003. Más de 15.000 alumnos formados con éxito.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+                        <li><a href="#sedes">Sedes</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="#cursos">Carnet B (Coche)</a></li>
+                        <li><a href="#cursos">Carnet A (Moto)</a></li>
+                        <li><a href="#cursos">Carnet C (Camión)</a></li>
+                        <li><a href="#cursos">Cursos intensivos</a></li>
+                        <li><a href="#cursos">Reciclaje y CAP</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Conducción Segura, 123</li>
+                        <li><i class="fas fa-phone"></i> +34 912 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@autovial.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoVial Autoescuela. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de privacidad</a> |
+                    <a href="#">Términos y condiciones</a> |
+                    <a href="#">Aviso legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/34912345678" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Leaflet JS para el mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
